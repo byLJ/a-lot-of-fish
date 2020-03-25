@@ -14,7 +14,7 @@ public class ScreenWrap : MonoBehaviour
     private Transform spawnPoint;
 
     void Awake()
-	{
+    {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponentInChildren<Renderer>();
@@ -22,11 +22,11 @@ public class ScreenWrap : MonoBehaviour
     }
 
     void Update()
-	{
+    {
         // sometimes fish escape, check occasionally
         failsafeTimer += Time.deltaTime;
         if(failsafeTimer > failsafeInterval)
-		{
+	{
             failsafeTimer = 0f;
             if(!rend.isVisible) WrapPosition();
         }
@@ -34,8 +34,8 @@ public class ScreenWrap : MonoBehaviour
 
     void OnBecameInvisible()
     {
-		if (GameController.gameStarted)
-		{
+    	if (GameController.gameStarted)
+	{
             WrapPosition();
         }
     }
