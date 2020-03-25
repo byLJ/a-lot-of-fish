@@ -41,7 +41,7 @@ public class ScreenWrap : MonoBehaviour
     }
 
     private void WrapPosition()
-	{
+    {
         Vector3 position = rb.position;
         Vector3 viewportPosition = mainCamera.WorldToViewportPoint(position);
         if (viewportPosition.x > 1 || viewportPosition.x < 0)
